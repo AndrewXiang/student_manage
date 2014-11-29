@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="default" extends="struts-default">
+         <interceptors>
+             <interceptor name="myInterceptor" class="com.javaweb.ch11.student.tool.MyInterceptor"/>
+         </interceptors>
+         <global-results>
+             <result name="login">/web/login.jsp</result>
+         </global-results>
+         <action name="login" class="com.javaweb.ch11.student.action.LoginAction">
+             <result name="success">/main.jsp</result>
+             <result name="error">/web/login.jsp</result>
+         </action>
+         
+         
+          <action name="addXsView" class="com.javaweb.ch11.student.action.StudentAction" method="addXsView">
+             <result name="success">/web/add_student.jsp</result>
+         </action>
+         <action name="addXs" class="com.javaweb.ch11.student.action.StudentAction" method="addXs">
+             <result name="success">/web/success.jsp</result>
+             <result name="error">/web/existed_student_num.jsp</result>
+         </action>
+         <action name="xsInfo" class="com.javaweb.ch11.student.action.StudentAction">
+             <result name="success">/web/student_info.jsp</result>
+         </action>
+         <action name="getImage" class="com.javaweb.ch11.student.action.StudentAction" 
+         method="getImage">
+         </action>
+         <action name="findXs" class="com.javaweb.ch11.student.action.StudentAction" method="findXs">
+             <result name="success">/web/detail_student_info.jsp</result>
+         </action>
+         <action name="updateXsView" class="com.javaweb.ch11.student.action.StudentAction" method="updateXsView">
+             <result name="success">/web/update_student.jsp</result>
+         </action>
+         <action name="deleteXs" class="com.javaweb.ch11.student.action.StudentAction" method="deleteXs">
+             <result name="success">/web/success.jsp</result>
+         </action>
+         <action name="updateXs" class="com.javaweb.ch11.student.action.StudentAction" method="updateXs">
+             <result name="success">/web/success.jsp</result>
+         </action>
+        
+         
+         <action name="addKcView" class="com.javaweb.ch11.student.action.CourseAction">
+             <result name="success">/web/add_course.jsp</result>
+         </action>
+         <action name="addKc" class="com.javaweb.ch11.student.action.CourseAction" method="addKc">
+             <result name="success">/web/success.jsp</result>
+             <result name="error">/web/existed_course_num.jsp</result>
+         </action>
+         <action name="kcInfo" class="com.javaweb.ch11.student.action.CourseAction" method="kcInfo">
+             <result name="success">/web/course_info.jsp</result>
+         </action>
+         <action name="findKc" class="com.javaweb.ch11.student.action.CourseAction" method="findKc">
+             <result name="success">/web/detail_course.jsp</result>
+         </action>
+         <action name="deleteKc" class="com.javaweb.ch11.student.action.CourseAction" method="deleteKc">
+             <result name="success">/web/success.jsp</result>
+         </action> 
+         <action name="updateKcView" class="com.javaweb.ch11.student.action.CourseAction" method="updateKcView">
+             <result name="success">/web/update_course.jsp</result>
+         </action>
+         <action name="updateKc" class="com.javaweb.ch11.student.action.CourseAction" method="updateKc">
+             <result name="success">/web/success.jsp</result>
+         </action>
+         <action name="addXscjView" class="com.javaweb.ch11.student.action.ScoreAction">
+             <result name="success">/web/add_student_score.jsp</result>
+             <!--<interceptor-ref name="defaultStack"></interceptor-ref>
+             <interceptor-ref name="myInterceptor"></interceptor-ref>-->
+         </action>
+          <action name="addCj" class="com.javaweb.ch11.student.action.ScoreAction" method="addCj">
+             <result name="success">/web/success.jsp</result>
+             <result name="error">/web/existed_score.jsp</result>
+         </action>
+         <action name="xscjInfo" class="com.javaweb.ch11.student.action.ScoreAction" method="xscjInfo">
+             <result name="success">/web/student_score_info.jsp</result>
+         </action>
+         <action name="findXscj" class="com.javaweb.ch11.student.action.ScoreAction" method="findXscj">
+             <result name="success">/web/result_student_course.jsp</result>
+             <result name="error">/web/student_course_nohave.jsp</result>
+         </action>
+         <action name="findCj" class="com.javaweb.ch11.student.action.ScoreAction" method="findCj">
+             <result name="success">/web/detail_score.jsp</result>
+         </action>
+         <action name="deleteCj" class="com.javaweb.ch11.student.action.ScoreAction" method="deleteCj">
+             <result name="success">/web/success.jsp</result>
+         </action> 
+         <action name="updateCjView" class="com.javaweb.ch11.student.action.ScoreAction" method="updateCjView">
+             <result name="success">/web/update_score.jsp</result>
+         </action>
+         <action name="updateXscj" class="com.javaweb.ch11.student.action.ScoreAction" method="updateXscj">
+             <result name="success">/web/success.jsp</result>
+         </action>
+    </package>
+</struts> 
